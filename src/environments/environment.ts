@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  baseApiUrl: 'https://call-of-duty-modern-warfare.p.rapidapi.com',
+  apiHost: 'call-of-duty-modern-warfare.p.rapidapi.com',
+  apiKey: 'i65mrE13AImsh8UDnk5rBJz8uwk5p1Fn3mKjsnpR4Q9Z4217E4',
 };
 
 /*
