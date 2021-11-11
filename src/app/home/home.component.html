@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+  <div class="col-10 col-sm-8 col-md-4">
+    <form
+      [formGroup]="searchForm"
+      (ngSubmit)="onSearch()"
+      class="d-flex flex-column"
+    >
+      <mat-form-field appearance="fill" class="mb-3">
+        <mat-label>Platform</mat-label>
+        <mat-select formControlName="platform">
+          <mat-option>None</mat-option>
+          <mat-option *ngFor="let p of platforms" [value]="p.value">{{
+            p.label
+          }}</mat-option>
+        </mat-select>
+        <mat-error
+          *ngIf="platform?.invalid && (platform?.dirty || platform?.touched)"
+        >
+          Platform is required
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="mb-3">
+        <mat-label>Gamertag</mat-label>
+        <input matInput formControlName="gamertag" />
+        <mat-error
+          *ngIf="gamertag?.invalid && (gamertag?.dirty || gamertag?.touched)"
+        >
+          Gamertag is required
+        </mat-error>
+      </mat-form-field>
+      <button
+        type="submit"
+        mat-raised-button
+        color="primary"
+        [disabled]="platform?.invalid || gamertag?.invalid"
+      >
+        Search
+      </button>
+    </form>
+  </div>
+</div>
